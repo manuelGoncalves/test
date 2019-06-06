@@ -1,2 +1,2 @@
 FROM tomcat:jre8-slim
-RUN curl https://raw.githubusercontent.com/VeerMuchandi/ps/master/deployments/ROOT.war -o $JBOSS_HOME/standalone/deployments/ROOT.war
+RUN curl RUN curl http://10.39.42.15/hbo-go-service-1.5.2-SNAPSHOT.war -o /usr/local/tomcat/webapps//hbo-go.war
