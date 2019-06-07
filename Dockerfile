@@ -1,5 +1,6 @@
 FROM tomcat:jre8-slim
 ENV TZ=Europe/Budapest
+RUN apt install filebeat
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update
 RUN mkdir -p /app/
@@ -20,14 +21,3 @@ RUN chmod -R 777  /usr/local/tomcat/work
 RUN chmod -R 777  /usr/local/tomcat/logs
 
 
-FROM docker.elastic.co/beats/filebeat:6.5.2
-
-# Copy our custom configuration file COPY filebeat.yml /usr/share/filebeat/filebeat.yml
-
-USER root
-
-# Create a directory to map volume with all docker log files RUN mkdir /usr/share/filebeat/dockerlogs
-
-RUN chown -R root /usr/share/filebeat/
-
-RUN chmod -R go-w /usr/share/filebeat/
