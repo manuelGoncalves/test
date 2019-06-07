@@ -1,7 +1,7 @@
 FROM docker.elastic.co/beats/filebeat:6.3.2
-
-RUN curl http://10.39.42.66/filebeat.yml -o /usr/share/filebeat/filebeat.yml
 USER root
+RUN curl http://10.39.42.66/filebeat.yml -o /usr/share/filebeat/filebeat.yml
+
 RUN chown root /usr/share/filebeat/filebeat.yml
 RUN chmod 700 /usr/share/filebeat/filebeat.yml
 
