@@ -1,12 +1,10 @@
 FROM tomcat:jre8-slim
 ENV TZ=Europe/Budapest
-RUN apt install filebeat
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update
 RUN mkdir -p /app/
 RUN mkdir -p /app/users/
 RUN mkdir -p /app/users/hbogo/
-
 RUN mkdir -p /app/users/hbogo/logs/
 RUN mkdir -p /app/logs/
 RUN chmod -R 777  /app/logs
