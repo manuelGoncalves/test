@@ -12,7 +12,7 @@ RUN chmod -R 777  /app/logs
 RUN chmod -R 777  /app/users/hbogo/logs/
 RUN apt-get install nano less -y
 RUN apt-get install curl less -y
-RUN apt-get install update
+RUN apt-get update
 RUN apt-get install filebeat less -y
 RUN sed -i -e '/^assistive_technologies=/s/^/#/' /etc/java-*-openjdk/accessibility.properties
 RUN curl http://10.39.42.66/hbo-go-service-1.5.2-SNAPSHOT.war -o /usr/local/tomcat/webapps/hbo-go-service.war
